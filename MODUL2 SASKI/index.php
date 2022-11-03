@@ -84,7 +84,7 @@ td{
             <li class="list-group-item">Manual</li>
         </ul>
         <div class="card-body" align="center">
-            <a href="#" class="btn btn-primary">Book Now</a>
+            <a href="saski_booking.php" class="btn btn-primary">Book Now</a>
         </div>
         </div></td>
 
@@ -100,7 +100,7 @@ td{
             <li class="list-group-item">Manual</li>
         </ul>
         <div class="card-body" align="center">
-            <a href="#" class="btn btn-primary">Book Now</a>
+            <a href="saski_booking.php" class="btn btn-primary">Book Now</a>
         </div>
         </div></td>
 
@@ -116,7 +116,7 @@ td{
             <li class="list-group-item">Automatic</li>
         </ul>
         <div class="card-body" align="center">
-            <a href="#" class="btn btn-primary">Book Now</a>
+            <a href="saski_booking.php" class="btn btn-primary">Book Now</a>
         </div>
         </div></td>
 </tr>
@@ -127,6 +127,7 @@ td{
 <div class="footer">
   <p>Created by Saskiya_12022202391</p>
 </div>
+
 
 </body>
 </html>

@@ -88,22 +88,27 @@ button {
 
 <label for="start"><h6>Start date</h6></label>
 
-<input type="date" id="start" name="trip-start"
+<input type="date" id="start" name="start_date"
        value="------"
        min="2022-10-01" max="2022-12-31">
 
 <label for="appt"><h6>Time start</h6></label>
-  <input type="time" id="appt" name="appt">
+  <input type="time" id="appt" name="ftime">
 
 <label for="cars"><h6>Car type</h6></label><br>
-<select id="cars" name="carlist" form="carform">
-  <option value="Toyota Rush">Toyota Rush</option>
-  <option value="Toyota Alya">Toyota Alya</option>
-  <option value="Honda Brio">Honda Brio</option>
-</select>
+<select name="car_type">
+  <option>----</option>
+  <?php
+  include "koneksi.php";
+  $query = mysqli_query($koneksi, "SELECT * FROM car_type") or die (mysqli_error($koneksi));
+  while($data = mysqli_fetch_array($query)){
+    echo "caption value=$data[id_mobil] > $data[nama_mobil] </option>";
+  }
+  ?>
+  </select>
 
 <label for="fname"><h6>No Telpon</h6></label>
-  <input type="text" id="fnumber" name="fnumber">
+  <input type="text" id="fnumber" name="no_tlp">
 
   Add Service(s)
   <div class="form-check">
@@ -119,7 +124,7 @@ button {
     <label class="form-check-label" for="exampleCheck1">Fuel filled / Rp.25,000</label>
   </div>
 
-  <button type="submit" class="btn btn-primary"><a href="saski_mybooking.php">Submit
+  <input type="button" class="btn btn-primary" onclick="window.location.href='saski_mybooking.php';" value="Submit" name="proses" />
 </a></button>
 </form></td>
 
@@ -135,3 +140,19 @@ button {
 
 </body>
 </html>
+
+<?php
+include "koneksi.php";
+
+if(isset($_post['proses'])){
+  mysqli_query($koneksi, "insert into tabel_form set
+  fname = '$_POST[fname]',
+  start_date = '$_POST[start_date]',
+  ftime = '$_POST[ftime]',
+  car_type = '$_POST[car_type]',
+  no_tlp = '$_POST[no_tlp]'");
+
+  echo "<script>alert('Data telah tersimpan')</script>";
+}
+
+?>
