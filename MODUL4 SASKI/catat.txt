@@ -1,0 +1,55 @@
+
+<?php include('config.php');?>
+<?php 
+if (isset($_SESSION['register']) && $_SESSION['register'] == 'gagal') {$_SESSION['register'] = ""; ?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>ALERT!</strong> Email sudah pernah terdaftar!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+<?php }
+
+?>
+
+<?php
+include 'config.php';
+if(!empty($_SESSION["id"])){
+  $id = $_SESSION["id"];
+  $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE id = $id");
+  $row = mysqli_fetch_assoc($result);
+}
+else{
+  header("Location: login.php");
+}
+?>
+
+
+
+<?php
+include 'config.php';
+if(!empty($_SESSION["id_user"])){
+  header("Location: index.php");
+}
+if(isset($_POST["login"])){
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $result = mysqli_query($connect, "SELECT * FROM wad_modul4 WHERE id_user = '$username'");
+    $row = mysqli_fetch_assoc($result);
+    if(mysqli_num_rows($result) > 0){
+        if($password == $row['password_user']){
+        $_SESSION["login"] = true;
+        $_SESSION["id_user"] = $row["id_user"];
+        header("Location: index.php");
+        }
+        else{
+        echo "<script> alert('Wrong Password'); </script>";
+        echo "<meta http-equiv='refresh' content='1 url=login.php'>";
+        }
+    }
+    else{
+        echo "<script> alert('User Not Registered'); </script>";
+        echo "<meta http-equiv='refresh' content='1 url=login.php'>";
+    }
+}
+?>
