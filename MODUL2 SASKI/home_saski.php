@@ -1,133 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Title</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-    float: left;
-    text-align: center;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111;
-}
-
-h1{
-    text-align: center;
-}
-
-td{
-    vertical-align: top;
-}
-
-</style>
-
-<style>
-.footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: light gray;
-  color: gray;
-  text-align: center;
-}
-</style>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>WAD2022 SASKI 1202204094</title>
 </head>
 <body>
+    <?php
+    $carImg = array(
+        "./img/rush.png",
+        "./img/ayla.png",
+        "./img/brio.png"
+    );
 
-<ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="saski_booking.php">Book</a></li> 
-</ul>
+    $desCar = array(
+        array("Toyota Rush", 200000, "7 Kursi" , "1500 CC", "Manual"),
+        array("Toyota Ayla", 150000, "5 Kursi" , "1200 CC", "Manual"),
+        array("Honda Brio", 150000, "5 Kursi" , "1200 CC", "Automatic")
+    );
+    
+    ?>
 
-<br>
-<h1>Welcome to EAD Rental</h2>
 
-<p1><center>Find your deal here!</center></p1>
+    <section>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container justify-content-center">
+                <a class="navbar-brand" href="saski_home.php">Home</a>
+                <a class="navbar-brand" href="saski_booking.php">Booking</a>
+            </div>
+        </nav>
+    </section>
 
-<br>
-<table width= "80%" align="center">
-<tr>
-        <td align="center"><div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://www.toyota.astra.co.id/sites/default/files/2021-08/1-white.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title" align="left">Toyota Rush</h5>
-            <p class="card-text" align="left">Rp. 200,000 /day</p>
+    <section>
+        <div class="text-center">
+            <h4>WELCOME TO EAD RENT <br></h4>
+            <p>Find your best deal, here!</p>
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">7 Kursi</li>
-            <li class="list-group-item">1500 cc</li>
-            <li class="list-group-item">Manual</li>
-        </ul>
-        <div class="card-body" align="center">
-            <a href="saski_booking.php" class="btn btn-primary">Book Now</a>
-        </div>
-        </div></td>
+    </section>
 
-        <td align="center"><div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://static.wixstatic.com/media/bce131_68ed2ab4bf524f46b70df73cad32f9da~mv2.png/v1/fill/w_1000,h_600,al_c/bce131_68ed2ab4bf524f46b70df73cad32f9da~mv2.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title" align="left">Toyota Ayla</h5>
-            <p class="card-text" align="left">Rp. 150,000 /day</p>
+    <section >
+        <div class="container mt-3">
+            <form action="saski_booking.php" method="GET">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <img src="<?= $carImg[0]?>" class="card-img-top" alt="Toyota Rush.jpg"/>
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $desCar[0][0]?></h5>
+                                <p class="text-muted">Rp. <?= $desCar[0][1]?> / Day</p>
+                            </div>
+                            <div class="card">
+                                <ul class="list-group list-group-flush  ">
+                                    <li class="list-group-item d-flex justify-content-center fw-bold text-primary "><?= $desCar[0][2]?></li>
+                                    <li class="list-group-item d-flex justify-content-center fw-bold text-primary"><?= $desCar[0][3]?></li>
+                                    <li class="list-group-item d-flex justify-content-center fw-bold text-primary"><?= $desCar[0][4]?></li>
+                                </ul>
+                                <div class="card-footer d-flex justify-content-center">
+                                    <form action="saski_booking.php" method="POST">
+                                        <button type="submit" value="<?= $desCar[0][0]?>" name="bookNow" class="btn btn-primary"> Book Now</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="<?= $carImg[1]?>" class="card-img-top" alt="Toyota Ayla.jpg"/>
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $desCar[1][0]?></h5>
+                                <p class="text-muted">Rp. <?= $desCar[1][1]?> / Day</p>
+                            </div>
+                            <div class="card">
+                                <ul class="list-group list-group-flush  ">
+                                    <li class="list-group-item d-flex justify-content-center fw-bold text-primary "> <?= $desCar[1][2]?></li>
+                                    <li class="list-group-item d-flex justify-content-center fw-bold text-primary"><?= $desCar[1][3]?></li>
+                                    <li class="list-group-item d-flex justify-content-center fw-bold text-primary"><?= $desCar[1][4]?></li>
+                                </ul>
+                                <div class="card-footer d-flex justify-content-center">
+                                    <form action="saski_booking.php" method="POST">
+                                        <button type="submit" value="<?= $desCar[1][0]?>" name="bookNow" class="btn btn-primary"> Book Now</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                        <img src="<?= $carImg[2]?>" class="card-img-top" alt="Honda Brio.jpg"/>
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $desCar[2][0]?></h5>
+                                <p class="text-muted">Rp. <?= $desCar[2][1]?> / Day</p>
+                            </div>
+                            <div class="card">
+                                <ul class="list-group list-group-flush  ">
+                                    <li class="list-group-item d-flex justify-content-center fw-bold text-primary "><?= $desCar[2][2]?></li>
+                                    <li class="list-group-item d-flex justify-content-center fw-bold text-primary"><?= $desCar[2][3]?></li>
+                                    <li class="list-group-item d-flex justify-content-center fw-bold text-primary"><?= $desCar[2][4]?></li>
+                                </ul>
+                                <div class="card-footer d-flex justify-content-center">
+                                    <form action="saski_booking.php" method="POST">
+                                        <button type="submit" value="<?= $desCar[2][0]?>" name="bookNow" class="btn btn-primary"> Book Now</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">5 Kursi</li>
-            <li class="list-group-item">1200 cc</li>
-            <li class="list-group-item">Manual</li>
-        </ul>
-        <div class="card-body" align="center">
-            <a href="saski_booking.php" class="btn btn-primary">Book Now</a>
-        </div>
-        </div></td>
+    </section>
 
-        <td align="center"><div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://www.icanrentacar.com/wp-content/uploads/2022/06/HondaBrioBlack.png" height="175" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title" align="left">Honda Brio</h5>
-            <p class="card-text" align="left">Rp. 150,000 /day</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">5 Kursi</li>
-            <li class="list-group-item">1200 cc</li>
-            <li class="list-group-item">Automatic</li>
-        </ul>
-        <div class="card-body" align="center">
-            <a href="saski_booking.php" class="btn btn-primary">Book Now</a>
-        </div>
-        </div></td>
-</tr>
-</table>
-
-<br>
-<br>
-<div class="footer">
-  <p>Created by Saskiya_12022202391</p>
-</div>
-
+    <section>
+        <footer class="bg-light text-center text-lg-start">
+            <p class="text-center">Created by SASKI_1202204094</p>
+        </footer>
+    </section>       
 
 </body>
 </html>
