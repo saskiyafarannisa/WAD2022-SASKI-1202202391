@@ -14,7 +14,7 @@
             <div class="d-flex justify-content-start">
                 <a class="navbar-brand" href="#"></a>
                 <a class="navbar-brand" href="#"></a>
-                <a href="index.php" class="btn btn-primary btn-lg " role="button" aria-disabled="true">Home</a>
+                <a href="#" class="btn btn-primary btn-lg " role="button" aria-disabled="true">Home</a>
                 <a href="#" class="btn btn-primary btn-lg " role="button" aria-disabled="true">MyCar</a>
             </div>
             <div align="right">

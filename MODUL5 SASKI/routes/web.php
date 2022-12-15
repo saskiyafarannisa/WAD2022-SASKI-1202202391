@@ -15,12 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/showroom', function () {
+    return view('showroom.index');
 });
 
 Route::get('/sqlconn', function () {
     return view('sqlconn');
+});
+
+Route::get('/create', function () {
+    return view('showroom.create');
 });
 
 Route::resource('showroom', ShowroomController::class);
